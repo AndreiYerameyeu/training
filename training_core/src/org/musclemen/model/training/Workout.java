@@ -12,18 +12,18 @@ import java.util.List;
  */
 public class Workout {
 	
-	private Integer Id;
+	private Integer id;
 	
 	private List<Set> sets = new ArrayList<Set>();
 	
 	private Date date;
 
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public List<Set> getSets() {
