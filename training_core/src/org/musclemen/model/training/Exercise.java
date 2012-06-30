@@ -1,5 +1,13 @@
 package org.musclemen.model.training;
 
+/**
+ * The <code>Exercise</code> is responsible for holding description of specific
+ * exercise like "Bench press".
+ * 
+ * 
+ * @author Andrei_Yerameyeu
+ *
+ */
 public class Exercise {
 	
 	/* Keeps the name of exercise */
