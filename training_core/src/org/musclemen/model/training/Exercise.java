@@ -1,5 +1,8 @@
 package org.musclemen.model.training;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * The <code>Exercise</code> is responsible for holding description of specific
  * exercise like "Bench press".
@@ -8,8 +11,10 @@ package org.musclemen.model.training;
  * @author Andrei_Yerameyeu
  *
  */
+@Entity
 public class Exercise {
 	
+	@Id
 	/* Keeps the name of exercise */
 	private String name;
 
