@@ -30,7 +30,7 @@ public class Workout {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Integer id;
 	
-	@OneToMany(cascade=CascadeType.PERSIST)
+	@OneToMany(cascade=CascadeType.ALL)
 	@JoinTable(	name ="WORKOUT_SETS", 
 				joinColumns = @JoinColumn(name="WRKT_ID"),
 				inverseJoinColumns =  @JoinColumn(name="SET_ID"))
