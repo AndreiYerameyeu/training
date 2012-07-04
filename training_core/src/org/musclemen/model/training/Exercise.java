@@ -1,6 +1,9 @@
 package org.musclemen.model.training;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -14,7 +17,14 @@ import javax.persistence.Id;
 @Entity
 public class Exercise {
 	
+	@Column(name="ID")
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer Id;
+	
+
+
+	@Column(name="NAME")
 	/* Keeps the name of exercise */
 	private String name;
 
@@ -35,5 +45,16 @@ public class Exercise {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	
+	/**
+	 * Gets ID of the entiry.
+	 * 
+	 * @return
+	 */
+	public Integer getId() {
+		return Id;
+	}
+
 
 }
