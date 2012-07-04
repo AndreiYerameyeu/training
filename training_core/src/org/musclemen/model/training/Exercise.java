@@ -19,7 +19,7 @@ public class Exercise {
 	
 	@Column(name="ID")
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Integer Id;
 	
 
