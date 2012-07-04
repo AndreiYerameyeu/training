@@ -2,6 +2,7 @@ package org.musclemen.model.training;
 
 import java.math.BigDecimal;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,8 +26,8 @@ public class Set {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Integer id;
 	
-	@OneToOne
-	@JoinColumn(name="EXERCISE_ID")
+	@OneToOne(cascade=CascadeType.PERSIST)
+	@JoinColumn(name="EXERCISE_ID")	
 	private Exercise exercise;
 	
 	/*

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,7 +30,7 @@ public class Workout {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Integer id;
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.PERSIST)
 	@JoinTable(	name ="WORKOUT_SETS", 
 				joinColumns = @JoinColumn(name="WRKT_ID"),
 				inverseJoinColumns =  @JoinColumn(name="SET_ID"))
