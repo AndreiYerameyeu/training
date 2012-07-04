@@ -6,6 +6,8 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>org.musclemen.model.training.Exercise</class>
 		<class>org.musclemen.model.usermgmt.Participant</class>
+		<class>org.musclemen.model.training.Set</class>
+		<class>org.musclemen.model.training.Workout</class>
 		<properties>
 			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
 			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost/training" />
@@ -23,6 +25,8 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>org.musclemen.model.training.Exercise</class>
 		<class>org.musclemen.model.usermgmt.Participant</class>
+		<class>org.musclemen.model.training.Set</class>
+		<class>org.musclemen.model.training.Workout</class>
 		<properties>
 			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver" />
 			<property name="hibernate.connection.url" value="jdbc:oracle:thin:@EPMW1224:1521:xe" />
