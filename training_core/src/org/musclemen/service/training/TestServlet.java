@@ -73,16 +73,7 @@ public class TestServlet extends HttpServlet{
          List<Exercise> exercises = dao.getAllExercises();
          if (exercises==null || exercises.size()==0)
          {
-        	 Exercise e = new Exercise();
-        	 e.setName("e1");
-        	 dao.addNewExercise(e);
-        	 e = new Exercise();
-        	 e.setName("e2");
-        	 dao.addNewExercise(e);
-        	 e = new Exercise();
-        	 e.setName("e3");
-        	 dao.addNewExercise(e);
-        	 exercises = dao.getAllExercises();
+        	 dao.generateData();
          }
          for (Exercise exercise : exercises) {
         	 out.println( "<tr>" );

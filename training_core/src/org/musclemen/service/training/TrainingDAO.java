@@ -11,5 +11,7 @@ public interface TrainingDAO {
 	public abstract void addNewExercise(Exercise exercise);
 
 	public abstract void deleteExercise(String name);
+	
+	void generateData();
 
 }
