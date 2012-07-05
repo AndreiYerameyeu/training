@@ -59,5 +59,20 @@
 			<artifactId>spring-aspects</artifactId>
 			<version>3.1.0.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>	
+		
+		<!-- Because of licence isssue this jar can not be automatically downloaded,
+		so you have to manually install maven artifact, for example:
+		mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.1 -Dpackaging=jar -Dfile=d:/soft/oraclexe/app/oracle/product/10.2.0/server/jdbc/lib/ojdbc14.jar
+		 -->	
+		<!-- <dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc14</artifactId>
+			<version>10.2.0.1</version> 
+		</dependency>-->
 	</dependencies>
 </project>
