@@ -15,5 +15,6 @@
 	</bean>
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager" p:entityManagerFactory-ref="entityManagerFactory"/>	
 	<bean id="trainingDao"  class="org.musclemen.service.training.TrainingDAOJPAImpl"/>	
+	<bean id="participantDao"  class="org.musclemen.service.usermgmt.ParticipantDAOJPAImpl"/>	
 	<tx:annotation-driven/>	
 </beans>
