@@ -36,7 +36,7 @@ public class Workout {
 				inverseJoinColumns =  @JoinColumn(name="SET_ID"))
 	private List<Set> sets = new ArrayList<Set>();
 	
-	@Column(name="DATE")
+	@Column(name="WKT_DATE")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 
