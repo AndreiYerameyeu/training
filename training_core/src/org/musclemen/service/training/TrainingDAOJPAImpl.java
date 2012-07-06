@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
+import org.apache.log4j.Logger;
 import org.musclemen.model.training.Exercise;
 import org.musclemen.model.training.Set;
 import org.musclemen.model.training.Workout;
@@ -24,6 +25,8 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 public class TrainingDAOJPAImpl implements TrainingDAO {
+	
+	private static final Logger  LOG = Logger.getLogger(TrainingDAO.class);
 
 	@PersistenceContext
 	private EntityManager em;
@@ -34,9 +37,11 @@ public class TrainingDAOJPAImpl implements TrainingDAO {
 	 * @see org.musclemen.service.training.TrainingDAO#getAllExercises()
 	 */
 	@Override
-	public List<Exercise> getAllExercises() {
+	public List<Exercise> getAllExercises() {		
 		TypedQuery<Exercise> exQuery = em.createNamedQuery("Exercise.all", Exercise.class);
-		return exQuery.getResultList();
+		List<Exercise> resultList = exQuery.getResultList();
+		LOG.debug("getAllExercises found "+resultList.size()+"exercises");
+		return resultList;
 	}
 
 	/*
