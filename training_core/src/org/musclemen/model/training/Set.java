@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  * The <code>Set</code> is responsible for keeping information abou one training set. 
@@ -19,6 +20,7 @@ import javax.persistence.OneToOne;
  *
  */
 @Entity
+@Table(name="TRAINING_SET")
 public class Set {
 	
 	@Column(name="ID")
