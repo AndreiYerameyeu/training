@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 /**
  * The <code>Exercise</code> is responsible for holding description of specific
@@ -15,6 +16,7 @@ import javax.persistence.Id;
  *
  */
 @Entity
+@NamedQuery(name="Exercise.all",query="SELECT x FROM Exercise x")
 public class Exercise {
 	
 	@Column(name="ID")
