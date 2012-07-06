@@ -48,7 +48,14 @@ public class TrainingDAOJPAImpl implements TrainingDAO {
 	 */
 	@Override
 	public Exercise persist(Exercise exercise) {
-		em.persist(exercise);
+		Exercise ex = null;
+		if (exercise.getId() != null) {
+			ex = em.find(Exercise.class, exercise.getId());
+			if (ex!=null)
+				exercise = em.merge(ex);
+		}
+		if (ex == null)
+			em.persist(exercise);
 		return exercise;
 	}
 
