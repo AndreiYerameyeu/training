@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.musclemen.model.training.Exercise;
 import org.musclemen.model.training.Set;
@@ -34,7 +35,8 @@ public class TrainingDAOJPAImpl implements TrainingDAO {
 	 */
 	@Override
 	public List<Exercise> getAllExercises() {
-		return em.createQuery("SELECT x FROM Exercise x").getResultList();
+		TypedQuery<Exercise> exQuery = em.createNamedQuery("Exercise.all", Exercise.class);
+		return exQuery.getResultList();
 	}
 
 	/*
@@ -45,10 +47,9 @@ public class TrainingDAOJPAImpl implements TrainingDAO {
 	 * .model.training.Exercise)
 	 */
 	@Override
-	public void addNewExercise(Exercise exercise) {
-
+	public Exercise persist(Exercise exercise) {
 		em.persist(exercise);
-
+		return exercise;
 	}
 
 	/*
@@ -59,8 +60,10 @@ public class TrainingDAOJPAImpl implements TrainingDAO {
 	 * )
 	 */
 	@Override
-	public void deleteExercise(String name) {
-
+	public void deleteExercise(Integer id) {
+		Exercise ex = em.find(Exercise.class, id);
+		if (ex == null)
+			throw new IllegalArgumentException("Exercise with given id does not exist");
 	}
 
 	@Override

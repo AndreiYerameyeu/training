@@ -8,9 +8,9 @@ public interface TrainingDAO {
 
 	public abstract List<Exercise> getAllExercises();
 
-	public abstract void addNewExercise(Exercise exercise);
+	public abstract Exercise persist(Exercise exercise);
 
-	public abstract void deleteExercise(String name);
+	public abstract void deleteExercise(Integer id);
 	
 	void generateData();
 
