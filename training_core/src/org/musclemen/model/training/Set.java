@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- * The <code>Set</code> is responsible for keeping information abou one training set. 
+ * The <code>Set</code> is responsible for keeping information about one training set. 
  * It should include the exercise, weight(optional), count (mandatory).
  * 
  * @author Andrei_Yerameyeu

@@ -8,6 +8,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 
 import org.apache.log4j.Logger;
 import org.musclemen.model.training.Exercise;
@@ -24,6 +27,8 @@ import org.springframework.transaction.annotation.Transactional;
  * 
  */
 @Transactional
+@Path("/trainingDAO")
+@Produces("application/json")
 public class TrainingDAOJPAImpl implements TrainingDAO {
 	
 	private static final Logger  LOG = Logger.getLogger(TrainingDAO.class);
@@ -37,6 +42,8 @@ public class TrainingDAOJPAImpl implements TrainingDAO {
 	 * @see org.musclemen.service.training.TrainingDAO#getAllExercises()
 	 */
 	@Override
+	@GET
+	@Path("/exercises")
 	public List<Exercise> getAllExercises() {		
 		TypedQuery<Exercise> exQuery = em.createNamedQuery("Exercise.all", Exercise.class);
 		List<Exercise> resultList = exQuery.getResultList();

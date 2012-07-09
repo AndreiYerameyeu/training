@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * The <code>Exercise</code> is responsible for holding description of specific
@@ -17,14 +19,17 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQuery(name="Exercise.all",query="SELECT x FROM Exercise x")
+@XmlRootElement()
+@XmlType(name = "", propOrder={"id", "name"})
 public class Exercise {
+	
+	
 	
 	@Column(name="ID")
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
-	private Integer Id;
+	private Integer id;
 	
-
 
 	@Column(name="NAME")
 	/* Keeps the name of exercise */
@@ -55,7 +60,11 @@ public class Exercise {
 	 * @return
 	 */
 	public Integer getId() {
-		return Id;
+		return id;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 
