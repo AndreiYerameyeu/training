@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @Entity
 @NamedQuery(name="Exercise.all",query="SELECT x FROM Exercise x")
-@XmlRootElement()
+@XmlRootElement(name="exercise")
 @XmlType(name = "", propOrder={"id", "name"})
 public class Exercise {
 	
