@@ -25,11 +25,13 @@
 		
 	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+	
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
-		<property name="persistenceUnitName" value="training_core_oracle" />
+		<property name="persistenceUnitName" value="training_core" />
 	</bean>
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager" p:entityManagerFactory-ref="entityManagerFactory"/>	
 	<bean id="trainingDao"  class="org.musclemen.service.training.TrainingDAOJPAImpl"/>	
 	<bean id="participantDao"  class="org.musclemen.service.usermgmt.ParticipantDAOJPAImpl"/>	
 	<tx:annotation-driven/>	
+
 </beans>

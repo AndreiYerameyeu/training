@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+.loginarea {
+    border: 4px double black; 
+    background: #ADD8E6; 
+    padding: 10px; 
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 10%;
+    height: 200px;
+}
+
+.loginform {
+	position: relative; 
+	height: 100px;
+	top: 50%;
+	margin-top: -50px;
+}
+
+.logintable {
+	position: relative; 
+	width: 250px;
+	left: 50%;
+	margin-left: -125px;
+}
