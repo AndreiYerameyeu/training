@@ -10,6 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import org.apache.log4j.Logger;
@@ -28,7 +29,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 @Path("/trainingDAO")
-@Produces("application/json")
+@Produces("application/xml")
 public class TrainingDAOJPAImpl implements TrainingDAO {
 	
 	private static final Logger  LOG = Logger.getLogger(TrainingDAO.class);
@@ -50,6 +51,18 @@ public class TrainingDAOJPAImpl implements TrainingDAO {
 		LOG.debug("getAllExercises found "+resultList.size()+"exercises");
 		return resultList;
 	}
+	
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.musclemen.service.training.TrainingDAO#getAllExercises()
+	 */
+	@GET
+	@Path("/exercises/{id}")
+	public Exercise getExercise(@PathParam("id") Integer id) {		
+		return em.find(Exercise.class, id);
+	}
+
 
 	/*
 	 * (non-Javadoc)

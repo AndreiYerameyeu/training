@@ -7,6 +7,8 @@ import org.musclemen.model.training.Exercise;
 public interface TrainingDAO {
 
 	public abstract List<Exercise> getAllExercises();
+	
+	public Exercise getExercise(Integer id);
 
 	public abstract Exercise persist(Exercise exercise);
 
